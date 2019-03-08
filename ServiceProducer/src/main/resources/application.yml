@@ -1,0 +1,12 @@
+server:
+  port: 8082
+eureka:
+  client:
+    service-url:
+      defaultZone: http://lw:lw@localhost:8761/eureka
+  instance:
+    prefer-ip-address: true
+    instance-id: ${spring.application.name}:${spring.cloud.client.ipAddress}:${spring.application.instance_id:${server.port}}
+spring:
+  application:
+    name: user-server-01
